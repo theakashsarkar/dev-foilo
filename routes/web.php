@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('components.backend.index');
 });
+
+Route::get('/users-table', function () {
+    return view('components.backend.layout.users.users-list');
+});
