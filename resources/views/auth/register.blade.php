@@ -93,7 +93,7 @@
             </div>
             <div class="col-md-6 col-lg-5">
                 <div class="login-box bg-white box-shadow border-radius-10">
-                        <form method="post" action="{{ route('register') }}">
+                        <form method="post" action="{{ route('register.user') }}">
                             @csrf
                             <div class="input-group custom">
                                 <input
