@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,14 +94,25 @@
             </div>
             <div class="col-md-6 col-lg-5">
                 <div class="login-box bg-white box-shadow border-radius-10">
-                        <form method="post" action="{{ route('register.user') }}">
+                        <div class="login-title">
+                            <h2 class="text-center text-primary">User Register</h2>
+                        </div>
+                        <form method="POST" action="{{ route('register.user') }}">
                             @csrf
                             <div class="input-group custom">
                                 <input
                                     type="text"
                                     class="form-control form-control-lg"
-                                    placeholder="Name"
-                                    name="name"
+                                    placeholder="First Name"
+                                    name="first_name"
+                                />
+                            </div>
+                            <div class="input-group custom">
+                                <input
+                                    type="text"
+                                    class="form-control form-control-lg"
+                                    placeholder="Last Name"
+                                    name="last_name"
                                 />
                             </div>
                             <div class="input-group custom">
@@ -113,52 +125,27 @@
                             </div>
                             <div class="input-group custom">
                                 <input
+                                    type="number"
+                                    class="form-control form-control-lg"
+                                    placeholder="Phone Number"
+                                    name="phone"
+                                />
+                            </div>
+                            <div class="input-group custom">
+                                <input
                                     type="password"
                                     class="form-control form-control-lg"
                                     placeholder="password"
                                     name="password"
                                 />
                             </div>
-                            <div class="row pb-30">
-                                <div class="col-6">
-                                    <div class="custom-control custom-checkbox">
-                                        <input
-                                            type="checkbox"
-                                            class="custom-control-input"
-                                            id="customCheck1"
-                                        />
-                                        <label class="custom-control-label" for="customCheck1"
-                                        >Remember</label
-                                        >
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="forgot-password">
-                                        <a href="forgot-password.html">Forgot Password</a>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="input-group mb-0">
                                         <!--
                                         use code for form submit
-                                        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
                                     -->
-                                        <input type="submit" value="Sign In" class="btn btn-primary btn-lg btn-block">
-                                    </div>
-                                    <div
-                                        class="font-16 weight-600 pt-10 pb-10 text-center"
-                                        data-color="#707373"
-                                    >
-                                        OR
-                                    </div>
-                                    <div class="input-group mb-0">
-                                        <a
-                                            class="btn btn-outline-primary btn-lg btn-block"
-                                            href="register.html"
-                                        >Register To Create Account</a
-                                        >
+                                        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
                                     </div>
                                 </div>
                             </div>

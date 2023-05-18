@@ -89,32 +89,25 @@
             <div class="col-md-6 col-lg-5">
                 <div class="login-box bg-white box-shadow border-radius-10">
                     <div class="login-title">
-                        <h2 class="text-center text-primary">Login To DeskApp</h2>
+                        <h2 class="text-center text-primary">Login</h2>
                     </div>
-                    <form>
+                    <form method="POST" action="{{ route('login.user') }}">
+                        @csrf
                         <div class="input-group custom">
                             <input
-                                type="text"
+                                type="email"
                                 class="form-control form-control-lg"
-                                placeholder="Username"
+                                placeholder="email"
+                                name="email"
                             />
-                            <div class="input-group-append custom">
-										<span class="input-group-text"
-                                        ><i class="icon-copy dw dw-user1"></i
-                                            ></span>
-                            </div>
                         </div>
                         <div class="input-group custom">
                             <input
                                 type="password"
                                 class="form-control form-control-lg"
-                                placeholder="**********"
+                                placeholder="password"
+                                name="password"
                             />
-                            <div class="input-group-append custom">
-										<span class="input-group-text"
-                                        ><i class="dw dw-padlock1"></i
-                                            ></span>
-                            </div>
                         </div>
                         <div class="row pb-30">
                             <div class="col-6">
@@ -142,11 +135,7 @@
                                     use code for form submit
                                     <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
                                 -->
-                                    <a
-                                        class="btn btn-primary btn-lg btn-block"
-                                        href="index.html"
-                                    >Sign In</a
-                                    >
+                                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
                                 </div>
                                 <div
                                     class="font-16 weight-600 pt-10 pb-10 text-center"

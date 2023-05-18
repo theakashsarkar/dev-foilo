@@ -26,6 +26,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
+
         return view('auth.register');
     }
 
@@ -36,20 +37,9 @@ class RegisteredUserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $request = $request->all();
-        return $request;
-//        $this->Users->createUser($request);
-
-//        $user = User::create([
-//            'name' => $request->name,
-//            'email' => $request->email,
-//            'password' => Hash::make($request->password),
-//        ]);
-//
+        $this->Users->createUser($request);
 //        event(new Registered($user));
-//
 //        Auth::login($user);
-//
-//        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME);
     }
 }

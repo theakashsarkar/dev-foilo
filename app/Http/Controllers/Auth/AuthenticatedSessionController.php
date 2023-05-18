@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\LoginRequest;
 use App\Providers\RouteServiceProvider;
+use App\Repository\Login;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +13,10 @@ use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
+    public function __construct(
+        public Login $login,
+    ){}
+
     /**
      * Display the login view.
      */
@@ -23,13 +28,14 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request)
     {
-        $request->authenticate();
-
-        $request->session()->regenerate();
-
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return $request->all();
+//        $this->login->authenticate($request);
+//
+//        $this->login->session()->regenerate();
+//
+//        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
