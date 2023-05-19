@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Providers\RouteServiceProvider;
+use App\Repository\AdminRegister;
 use App\Repository\authenticationInterface;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ use Illuminate\View\View;
 class AdminController extends Controller
 {
     public function __construct(
-        public authenticationInterface $Admin,
+        public AdminRegister $Admin,
     ){}
 
     public function create(): View

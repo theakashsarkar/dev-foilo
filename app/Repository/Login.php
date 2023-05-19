@@ -2,11 +2,9 @@
 
 namespace App\Repository;
 
-use App\Providers\RouteServiceProvider;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
-class Login
+class Login implements LoginInterface
 {
     public function authenticate($request): void
     {
