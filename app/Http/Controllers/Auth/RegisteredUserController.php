@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
      */
     public function store(UserRequest $request): RedirectResponse
     {
-        $this->Users->createUser($request);
+        $this->Users->create($request);
         return redirect(RouteServiceProvider::HOME);
     }
 }

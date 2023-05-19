@@ -1,16 +1,18 @@
 <?php
 
 namespace App\Repository;
-use App\Models\User;
+
+use App\Http\Requests\UserRequest;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-
-class Register implements authenticationInterface
+class AdminRegister implements authenticationInterface
 {
-    public function create(Request $request): void
+
+    public function create(UserRequest|Request $request): void
     {
-         User::insert([
+        Admin::insert([
             'first_name' => $request->first_name,
             'last_name'  => $request->last_name,
             'email'      => $request->email,
