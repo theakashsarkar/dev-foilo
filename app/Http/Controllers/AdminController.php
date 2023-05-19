@@ -23,6 +23,6 @@ class AdminController extends Controller
     public function store(UserRequest $request): RedirectResponse
     {
         $this->Admin->create($request);
-        return redirect('dashboard');
+        return redirect('admin/login');
     }
 }
