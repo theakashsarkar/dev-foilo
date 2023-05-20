@@ -91,7 +91,7 @@
                     <div class="login-title">
                         <h2 class="text-center text-primary">Admin Login</h2>
                     </div>
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('admin.login') }}">
                         @csrf
                         <div class="input-group custom">
                             <input

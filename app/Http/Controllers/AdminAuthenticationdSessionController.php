@@ -19,7 +19,8 @@ class AdminAuthenticationdSessionController extends Controller
 
     public function store(LoginRequest $request)
     {
-        $this->login->authenticate($request);
+
+        return $this->login->userAuthentication($request);
         return redirect('admin/dashboard');
     }
 }

@@ -4,14 +4,17 @@ namespace App\Repository;
 
 use Illuminate\Support\Facades\Auth;
 
-class AdminLogin implements LoginInterface
+class AdminLogin
 {
 
-    public function authenticate($request): void
+    public function userAuthentication($data)
     {
-       if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password]))
-           {
-               $request->session()->regenerate();
-           }
+        $isLogged = Auth::guard('admin')->attempt(['email' => $data->email, 'password' => $data->password]);
+        return $isLogged;
+
+//       if ()
+//           {
+//               $data->session()->regenerate();
+//           }
     }
 }

@@ -15,7 +15,7 @@ Route::middleware(['guest:admin'])->group(function () {
         ->name('admin.register');
 
     Route::get('login', [AdminAuthenticationdSessionController::class, 'create'])
-            ->name('login');
+            ->name('admin.login');
 
     Route::post('login', [AdminAuthenticationdSessionController::class, 'store']);
 })->prefix('admin');
