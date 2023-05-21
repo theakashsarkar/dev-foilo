@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Repository\AdminLogin;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class AdminAuthenticationdSessionController extends Controller
@@ -14,13 +15,18 @@ class AdminAuthenticationdSessionController extends Controller
     ){}
     public function create(): View
     {
+        Auth::guard('admin')->logout();
         return view('auth.admin.login');
     }
 
     public function store(LoginRequest $request)
     {
+      return  $this->login->userAuthentication($request);
+    }
 
-        return $this->login->userAuthentication($request);
-        return redirect('admin/dashboard');
+    public function destroy()
+    {
+        Auth::guard('admin')->logout();
+        return redirect('admin.login');
     }
 }

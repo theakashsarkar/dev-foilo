@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use Illuminate\Support\Facades\Auth;
 
-class Login implements LoginInterface
+class Login
 {
     public function authenticate($request): void
     {

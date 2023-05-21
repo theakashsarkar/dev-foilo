@@ -1,3 +1,8 @@
+@if($errors->any())
+    @foreach ($errors->all() as $error)
+        <div>{{ $error }}</div>
+    @endforeach
+@endif
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,8 +96,8 @@
                     <div class="login-title">
                         <h2 class="text-center text-primary">Admin Login</h2>
                     </div>
-                    <form method="POST" action="{{ route('admin.login') }}">
-                        @csrf
+                    <form method="POST" action="{{ route('submit.login') }}">
+
                         <div class="input-group custom">
                             <input
                                 type="email"
