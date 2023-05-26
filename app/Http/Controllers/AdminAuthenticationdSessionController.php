@@ -13,9 +13,9 @@ class AdminAuthenticationdSessionController extends Controller
     public function __construct(
         public AdminLogin $login
     ){}
+
     public function create(): View
     {
-        Auth::guard('admin')->logout();
         return view('auth.admin.login');
     }
 
