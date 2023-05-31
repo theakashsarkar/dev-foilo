@@ -35,9 +35,9 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(UserRequest $request): RedirectResponse
+    public function store(UserRequest $request)
     {
         $this->Users->create($request);
-        return redirect(RouteServiceProvider::HOME);
+//        return redirect('verify-user');
     }
 }
